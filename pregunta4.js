@@ -21,8 +21,13 @@
    * @param {*} discoveries 
    * @param {*} inventors 
    */
-  function addDiscoveries(inventor, discoveries, inventors){
-      
+  function addDescubrimientos(inventorLastName, discoveries, inventors){
+    for(const inventor of inventors){
+      if(inventor.last == inventorLastName){
+        inventor.discoveries = discoveries;
+      }
+    }
+    return inventors;
   }
 
   console.log(addDescubrimientos('Einstein', 

@@ -20,3 +20,13 @@ const beers = [
     { name: 'Stolen Fruit', abv: 4.6, label: 'https://s3.amazonaws.com/brewerydbapi/beer/YGT30k/upload_uVCHP7-large.png', type: 'Wheat' },
 ];
 
+function cambioElNombre(name, label){
+  label = label.substr(label.indexOf("beer"));
+  label = label.substr(label.indexOf("/")+1, 6);
+
+  return `https://tecnoshare.sharepoint.com/sites/beer/${label}/${name}.png`;
+}
+
+for(const beer of beers){
+  console.log(cambioElNombre(beer.name.replace(" ", '-'), beer.label));
+}
